@@ -1,1 +1,0 @@
-web: python scheduler.py runserver 0.0.0.0:5000
