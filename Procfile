@@ -1,2 +1,2 @@
-web: python scheduler.py
+web: gunicorn gettingstarted.wsgi
 worker: python scheduler.py 
