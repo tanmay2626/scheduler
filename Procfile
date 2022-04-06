@@ -1,2 +1,2 @@
-web: gunicorn scheduler.py 
+web: python scheduler.py
 worker: python scheduler.py 
