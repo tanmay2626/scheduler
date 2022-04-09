@@ -31,7 +31,7 @@ def task():
     except SlackApiError as e:
         print(f"Error: {e}")
 
-schedule.every(10).minutes.at(":00").do(task)
+schedule.every(2).minutes.at(":00").do(task)
 
 while True:
     schedule.run_pending()
