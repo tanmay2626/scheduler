@@ -43,7 +43,3 @@ schedule.every(10).minutes.at(":00").do(task)
 while True:
     schedule.run_pending()
     time.sleep(1)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
