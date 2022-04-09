@@ -1,9 +1,16 @@
 import schedule
 import datetime
+import os
 import time 
 import logging
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
+from dotenv import load_dotenv
+
+load_dotenv()
+
+channel_ID = os.getenv("CHANNEL_ID")
+token_ID = os.getenv("TOKEN")
 
 #def task():
 #    curr = datetime.datetime.now().strftime("%H:%M:%S")
@@ -15,9 +22,9 @@ from slack_sdk.errors import SlackApiError
 #    schedule.run_pending()
 #    time.sleep(1)
 
-client = WebClient(token="xoxb-3232981397716-3257672269472-H0jF2BdBw2z0LPZoIRC2bmQZ")
+client = WebClient(token=token_ID)
 logger = logging.getLogger(__name__)
-channel_id = "C036L0W9R46"
+channel_id = channel_ID
 
 def task():
     curr = datetime.datetime.now().strftime("%H:%M:%S")
