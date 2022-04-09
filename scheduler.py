@@ -15,7 +15,7 @@ from slack_sdk.errors import SlackApiError
 #    schedule.run_pending()
 #    time.sleep(1)
 
-client = WebClient(token="xoxb-3232981397716-3257672269472-SIAZQmW6ZPkie6iPkhDHQTm0")
+client = WebClient(token="xoxb-3232981397716-3257672269472-H0jF2BdBw2z0LPZoIRC2bmQZ")
 logger = logging.getLogger(__name__)
 channel_id = "C036L0W9R46"
 
@@ -31,7 +31,11 @@ def task():
     except SlackApiError as e:
         print(f"Error: {e}")
 
-schedule.every(2).minutes.at(":00").do(task)
+schedule.every(10).minutes.at(":00").do(task)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
 while True:
     schedule.run_pending()
